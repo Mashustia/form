@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Form</title>
+  <link rel="stylesheet" href="css/datepicker.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDNPRDLdJ2tNjPUWimDLvpL5w13mkDGpuM&callback=initMap"
+  type="text/javascript"></script>
+</head>
+<body>
+  <main>
+    <h1 class="visually-hidden">Форма</h1>
+    <section class="user-info">
+      <h1 class="user-info__title">Информация о кандидате</h1>
+      <form class="user-info__form form" enctype="multipart/form-data" action="https://echo.htmlacademy.ru" method="post">
+
+        <fieldset class="form__field-group">
+          <legend class="visually-hidden">Full name</legend>
+          <ul class="form__list">
+            <li class="form__item">
+              <label class="form__label" for="surname">Фамилия<span class="form__star-symbol"> *</span></label>
+              <input class="form__input" type="text" name="surname" id="surname" placeholder="Введите вашу фамилию" required>
+            </li>
+            <li class="form__item">
+              <label class="form__label" for="name">Имя<span class="form__star-symbol"> *</span></label>
+              <input class="form__input" type="text" name="name" id="name" placeholder="Введите ваше имя" required>
+            </li>
+          </ul>
+        </fieldset>
+
+        <fieldset class="form__field-group form__field-group--contacts">
+          <legend class="visually-hidden">Contacts</legend>
+          <ul class="form__list">
+            <li class="form__item">
+              <label class="form__label" class="form__label" for="phone-number">Телефон<span class="form__star-symbol"> *</span></label>
+              <input class="form__input" type="tel" name="phone-number" id="phone-number" placeholder="+7 (___) ___ - __ - __" required>
+            </li>
+            <li class="form__item">
+              <label class="form__label" class="form__label" for="email">Email<span class="form__star-symbol"> *</span></label>
+              <input class="form__input" type="email" name="email" id="email" placeholder="primer@corp.ifmo.ru" required>
+            </li>
+          </ul>
+        </fieldset>
+
+        <fieldset class="form__field-group">
+          <legend class="visually-hidden">Date of birth and photo</legend>
+          <ul class="form__list">
+            <li class="form__item form__item--data">
+              <label class="form__label form__label--data" for="date-of-birth">Дата рождения<span class="form__star-symbol"> *</span></label>
+              <input class="form__input form__input--date-of-birth" type="text" name="date-of-birth" id="date-of-birth" data-position='bottom left' dateFormat='dd / mm / yyyy' placeholder="03 / 05 / 1990" required>
+            </li>
+            <li class="form__item form__item--photo">
+              <p class="form__item-description">Фотография</p>
+              <input class="form__upload-input visually-hidden" type="file" id="upload-photo" name="upload-photo" accept="image/jpeg, image/png, image/jpg">
+              <label class="form__label form__label--photo" for="upload-photo">Прикрепить фото <span class="form__label-text">(формат: .png, .jpg, не более 2 Мб)</spa></label>
+            </li>
+          </ul>
+        </fieldset>
+
+        <fieldset class="form__field-group form__field-group--address">
+          <legend class="visually-hidden">Address</legend>
+
+          <div class="form__inner">
+            <label class="form__label" for="address">Адрес проживания<span class="form__star-symbol"> *</span></label>
+            <input class="form__input" type="text" name="address" id="address" placeholder="Введите адрес вручную или поставьте точку на карте, тогда он подставится автоматически" required>
+          </div>
+        </fieldset>
+
+        <div class="form__map map" id="map">
+
+        </div>
+
+        <fieldset class="form__field-group form__field-group--message">
+          <legend class="visually-hidden">Message</legend>
+
+          <div class="form__inner form__inner--message">
+            <label class="form__label" for="info">Дополнительная информация</label>
+            <p class="form__comment-max-length">Максимальное количество символов: 300</p>
+            <textarea class="form__textarea" name="" id="" cols="30" rows="3" placeholder="Введите ваше сообщение" maxlength="300"></textarea>
+          </div>
+        </fieldset>
+
+        <p class="form__warning">Поля, отмеченные звездочкой<span class="form__star-symbol"> *</span>, обязательны для заполнения</p>
+
+        <button class="form__button button" type="submit">Отправить</button>
+      </form>
+    </section>
+  </main>
+
+  <template id="success">
+    <section class="success">
+      <div class="success__inner">
+        <h2 class="success__title">Ваше сообщение успешно отправлено</h2>
+        <button type="button" class="success__close">Закрыть</button>
+      </div>
+    </section>
+  </template>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="js/jquery.inputmask.bundle.min.js"></script>
+  <script src="js/datepicker.min.js"></script>
+
+  <script src="js/script.js"></script>
+  <script src="js/backend.js"></script>
+</body>
+</html>

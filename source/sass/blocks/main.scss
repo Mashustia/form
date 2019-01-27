@@ -1,0 +1,328 @@
+.user-info {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.user-info__title {
+  font-size: 22px;
+  line-height: 30px;
+  font-weight: 700;
+  text-align: center;
+}
+
+@media (min-width: $desktop-width) {
+  .user-info {
+    padding-left: 47px;
+    padding-right: 43px;
+    padding-top: 38px;
+    padding-bottom: 42px;
+    width: $desktop-width;
+  }
+
+  .user-info__title {
+    margin: 0 auto;
+    width: 385px;
+    padding-right: 11px;
+    margin-bottom: 30px;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form__field-group {
+  width: 100%;
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+.form__inner {
+  margin-bottom: 15px;
+}
+
+.form__list {
+  @include list-reset;
+}
+
+.form__item {
+  display: flex;
+  margin-bottom: 15px;
+}
+
+.form__item--photo {
+  flex-direction: column;
+}
+
+.form__label,
+.form__item-description {
+  font-weight: 600;
+  line-height: 24px;
+  font-size: 14px;
+  margin: 0;
+  margin-right: 10px;
+  margin-top: 7px;
+  flex-shrink: 0;
+}
+
+.form__label--photo {
+  color: $text-color-photo;
+  font-weight: 400;
+  cursor: pointer;
+  margin: 0;
+  position: relative;
+  padding-left: 28px;
+}
+
+.form__label--photo::before {
+  position: absolute;
+  width: 20px;
+  height: 16px;
+  content: "";
+  top: 3px;
+  left: 0;
+  background-image: url("../img/photo_icon.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.form__star-symbol {
+  color: $text-color-required-fields;
+}
+
+.form__label-text {
+  color: $text-color-service-comments;
+}
+
+.form__input {
+  width: 100%;
+  font: inherit;
+  font-size: 14px;
+  line-height: 19px;
+  border: 1px solid #d4d6d7;
+  border-radius: 2px;
+  height: 40px;
+  padding: 0 15px;
+  min-width: 10px;
+  position: relative;
+}
+
+.form__input::placeholder,
+.form__textarea::placeholder {
+  color: #b2b2b2;
+}
+
+.form__input--date-of-birth {
+  padding-right: 0;
+  line-height: 16px;
+  width: 170px;
+}
+
+.form__input--date-of-birth::placeholder {
+  color: $text-color-main;
+}
+
+.form__upload-input:focus + .form__label {
+  outline: auto 5px highlight;
+}
+
+.map {
+  height: 396px;
+  width: 100%;
+  background-color: #ebebeb;
+  background-image: url("../img/map.jpg");
+  background-repeat: no-repeat;
+  background-position: center 0;
+  margin-bottom: 15px;
+}
+
+.form__textarea {
+  width: 100%;
+  resize: vertical;
+  font: inherit;
+  font-size: 14px;
+  line-height: 19px;
+  border: 1px solid #d4d6d7;
+  border-radius: 2px;
+  padding: 10px 15px;
+}
+
+.form__comment-max-length {
+  color: $text-color-service-comments;
+  flex-shrink: 0;
+}
+
+.form__warning {
+  margin: 0;
+  margin-bottom: 15px;
+}
+
+.form__button {
+  background-color: $background-color-button;
+  border: none;
+  color: $text-color-button;
+  border-radius: 90px;
+  padding: 12px 20px;
+  margin: 0 auto;
+  min-width: 120px;
+}
+
+@media (max-width: $mobile-width-only) {
+  .form__item--data {
+    flex-wrap: wrap;
+  }
+
+  .form__label--data {
+    width: 100%;
+    margin-bottom: 5px;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .form {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .form__field-group {
+    width: 800px;
+    margin-bottom: 30px;
+
+    &--contacts {
+      margin-bottom: 23px;
+    }
+
+    &--message {
+      margin-bottom: 12px;
+    }
+
+    &--address {
+      margin-bottom: 19px;
+    }
+  }
+
+  .form__inner {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-bottom: 0;
+  }
+
+  .form__inner--message {
+    flex-direction: row;
+  }
+
+  .form__list {
+    display: flex;
+  }
+
+  .form__item {
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 0;
+  }
+
+  .form__item:nth-child(2) {
+    margin-left: 32px;
+  }
+
+  .form__label {
+    margin: 0;
+    margin-right: auto;
+    margin-bottom: 6px;
+    flex-shrink: 0;
+  }
+
+  .form__label--photo::before {
+    top: 4px;
+    left: 3px;
+  }
+
+  .form__item-description {
+    margin: 0;
+    margin-right: auto;
+    margin-bottom: 10px;
+  }
+
+  .form__input--date-of-birth {
+    width: 160px;
+  }
+
+  .map {
+    height: 427px;
+    margin-bottom: 30px;
+  }
+
+  .form__textarea {
+    min-height: 96px;
+  }
+
+  .form__comment-max-length {
+    width: 316px;
+    margin: 0;
+    margin-left: auto;
+    text-align: right;
+    margin-top: 2px;
+    margin-bottom: 6px;
+  }
+
+  .form__warning {
+    width: 100%;
+    margin-bottom: 33px;
+  }
+
+  .form__button {
+    margin-right: 329px;
+    margin-left: auto;
+  }
+}
+
+.success {
+  position: fixed;
+  min-width: $mobile-width;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  background-color: $background-color-overlay;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 2px;
+}
+
+.success__inner {
+  background-color: $background-color-main;
+  margin-top: 140px;
+  margin-right: 10px;
+  margin-left: 10px;
+  position: relative;
+  padding: 70px 15px;
+  text-align: center;
+}
+
+.success__title {
+  font-size: 22px;
+  line-height: 30px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.success__close {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  font-size: 0;
+  top: 10px;
+  right: 10px;
+  border: none;
+  background-color: transparent;
+  background-image: url("../img/close_icon.svg");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
