@@ -1,7 +1,7 @@
 .user-info {
   width: 100%;
   margin: 0 auto;
-  padding: 0 10px;
+  padding: 0 18px;
 }
 
 .user-info__title {
@@ -42,6 +42,14 @@
 
 .form__inner {
   margin-bottom: 15px;
+
+  &--address::after {
+    width: 100%;
+    content: "Введите адрес вручную или поставьте точку на карте, тогда он подставится автоматически";
+    color: #b2b2b2;
+    display: block;
+    margin-top: 10px;
+  }
 }
 
 .form__list {
@@ -108,11 +116,20 @@
   padding: 0 15px;
   min-width: 10px;
   position: relative;
+
+  &:hover,
+  &:focus {
+    border-color: #acacac;
+  }
 }
 
 .form__input::placeholder,
 .form__textarea::placeholder {
   color: #b2b2b2;
+}
+
+.form__input--address::placeholder {
+  color: transparent;
 }
 
 .form__input--date-of-birth {
@@ -148,6 +165,11 @@
   border: 1px solid #d4d6d7;
   border-radius: 2px;
   padding: 10px 15px;
+
+  &:hover,
+  &:focus {
+    border-color: #acacac;
+  }
 }
 
 .form__comment-max-length {
@@ -168,6 +190,11 @@
   padding: 12px 20px;
   margin: 0 auto;
   min-width: 120px;
+
+  &:hover,
+  &:focus {
+    opacity: 0.8;
+  }
 }
 
 @media (max-width: $mobile-width-only) {
@@ -209,6 +236,10 @@
     flex-direction: column;
     flex-wrap: wrap;
     margin-bottom: 0;
+
+    &--address::after {
+      display: none;
+    }
   }
 
   .form__inner--message {
@@ -251,6 +282,10 @@
     width: 160px;
   }
 
+  .form__input--address::placeholder {
+    color: #b2b2b2;
+  }
+
   .map {
     height: 427px;
     margin-bottom: 30px;
@@ -280,7 +315,7 @@
   }
 }
 
-.success {
+.popup {
   position: fixed;
   min-width: $mobile-width;
   display: flex;
@@ -296,24 +331,24 @@
   border-radius: 2px;
 }
 
-.success__inner {
+.popup__inner {
   background-color: $background-color-main;
   margin-top: 140px;
-  margin-right: 10px;
-  margin-left: 10px;
+  margin-right: 18px;
+  margin-left: 18px;
   position: relative;
   padding: 70px 15px;
   text-align: center;
 }
 
-.success__title {
+.popup__title {
   font-size: 22px;
   line-height: 30px;
   font-weight: 700;
   margin: 0;
 }
 
-.success__close {
+.popup__close {
   position: absolute;
   width: 16px;
   height: 16px;
@@ -325,4 +360,21 @@
   background-image: url("../img/close_icon.svg");
   background-repeat: no-repeat;
   background-position: 0 0;
+}
+
+@media (min-width: $desktop-width) {
+  .popup__inner {
+    width: 544px;
+    margin-top: 268px;
+    margin-left: 13px;
+    padding-left: 126px;
+    padding-right: 126px;
+    padding-top: 126px;
+    padding-bottom: 136px;
+  }
+
+  .popup__close {
+    top: 24px;
+    right: 24px;
+  }
 }

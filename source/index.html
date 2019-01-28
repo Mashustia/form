@@ -6,12 +6,12 @@
 
   <title>Form</title>
   <link rel="stylesheet" href="css/datepicker.min.css">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.min.css">
   <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDNPRDLdJ2tNjPUWimDLvpL5w13mkDGpuM&callback=initMap"
   type="text/javascript"></script>
 </head>
 <body>
-  <main>
+  <main class="main">
     <h1 class="visually-hidden">Форма</h1>
     <section class="user-info">
       <h1 class="user-info__title">Информация о кандидате</h1>
@@ -62,39 +62,34 @@
 
         <fieldset class="form__field-group form__field-group--address">
           <legend class="visually-hidden">Address</legend>
-
-          <div class="form__inner">
+          <div class="form__inner form__inner--address">
             <label class="form__label" for="address">Адрес проживания<span class="form__star-symbol"> *</span></label>
-            <input class="form__input" type="text" name="address" id="address" placeholder="Введите адрес вручную или поставьте точку на карте, тогда он подставится автоматически" required>
+            <input class="form__input form__input--address" type="text" name="address" id="address" placeholder="Введите адрес вручную или поставьте точку на карте, тогда он подставится автоматически" required>
           </div>
         </fieldset>
 
         <div class="form__map map" id="map">
-
         </div>
 
         <fieldset class="form__field-group form__field-group--message">
           <legend class="visually-hidden">Message</legend>
-
           <div class="form__inner form__inner--message">
             <label class="form__label" for="info">Дополнительная информация</label>
             <p class="form__comment-max-length">Максимальное количество символов: 300</p>
             <textarea class="form__textarea" name="" id="" cols="30" rows="3" placeholder="Введите ваше сообщение" maxlength="300"></textarea>
           </div>
         </fieldset>
-
         <p class="form__warning">Поля, отмеченные звездочкой<span class="form__star-symbol"> *</span>, обязательны для заполнения</p>
-
         <button class="form__button button" type="submit">Отправить</button>
       </form>
     </section>
   </main>
 
-  <template id="success">
-    <section class="success">
-      <div class="success__inner">
-        <h2 class="success__title">Ваше сообщение успешно отправлено</h2>
-        <button type="button" class="success__close">Закрыть</button>
+  <template id="popup">
+    <section class="popup">
+      <div class="popup__inner">
+        <h2 class="popup__title"></h2>
+        <button type="button" class="popup__close">Закрыть</button>
       </div>
     </section>
   </template>
@@ -102,8 +97,8 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="js/jquery.inputmask.bundle.min.js"></script>
   <script src="js/datepicker.min.js"></script>
-
-  <script src="js/script.js"></script>
-  <script src="js/backend.js"></script>
+  <script src="js/script.min.js"></script>
+  <script src="js/backend.min.js"></script>
+  <script src="js/popup.min.js"></script>
 </body>
 </html>

@@ -86,7 +86,6 @@ function initMap() {
   }
 
   window.script = {
-    markers: markers,
     map: map,
     clearMarker: setMapOnAll
   };
